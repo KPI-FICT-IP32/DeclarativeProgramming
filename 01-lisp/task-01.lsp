@@ -22,7 +22,7 @@
       lists
     )
   )
-  '(REM FFG HHJ (H )J G D)
-  '(2 34 56 78 (7 8))
-  '(UN Y LOOP)
+  sequence_1
+  sequence_2
+  sequence_3
 )
