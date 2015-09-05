@@ -1,11 +1,11 @@
-\documentclass[a4paper, 14pt]{extarticle}
+\documentclass[a4paper, 12pt]{extarticle}
 \usepackage{polyglossia}
 \setdefaultlanguage{ukrainian}
 \setotherlanguage{english}
 \PolyglossiaSetup{ukrainian}{indentfirst=true}
 
 \usepackage{fontspec}
-\setmainfont{Times New Roman}
+\setmainfont{CMU Sans Serif}
 
 \usepackage[left=2.5cm, top=2.5cm, right=1.5cm, bottom=1.5cm]{geometry}
 
@@ -48,7 +48,7 @@
   \textsc{\uppercase{Міністерство освіти і науки України\\Національний технічний університет України\\<<Київський політехнічний інститут>>}}\\[1cm]
   \textsc{Кафедра обчислювальної техніки}\\[0.5cm]
   \vfill
-  \textsc{\Large \textbf{Лабораторна робота #1}}\\
+  \textsc{\Large \textbf{Лабораторна робота \#1}}\\
   \textsc{з дисципліни}\\
   \textsc{\large ``Декларативне програмування''}\\
   \textsc{на тему:}\\
@@ -81,4 +81,25 @@
   \item Вивчити роботу базових функцій із розширення набору примітивних функцій
   \item Ознайомитися з описом функцій у Lisp
 \end{itemize}
+
+\section{Визначення завдання}
+Номер за списком --- 13. Отже, номер варіанту завдання --- 13.
+Таким чином:
+
+\textbf{Вихідні списки:}
+\begin{itemize}
+  \item (REM FFG HHJ (H )J G D)
+  \item (2 34 56 78 (7 8))
+  \item (UN Y LOOP)
+\end{itemize}
+
+\textbf{Номери елементів:}
+\begin{itemize}
+  \item \textit{Список 1:} 4
+  \item \textit{Список 2:} 4
+  \item \textit{Список 3:} 2
+\end{itemize}
+
+\textbf{Індивідуальне завдання:}
+Дано списки, наприклад, '(1 2 3 4 5) та '(7 6 5 7). Якщо добуток перших елементів вихідних списків додатній, то у результуючий список слід об'єднати останні елементи заданих списків. Інакше --- скласти результуючий список із останнього елементу першого списку та хвоста другого.
 \end{document}
