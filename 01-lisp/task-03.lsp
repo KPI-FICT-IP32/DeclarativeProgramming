@@ -16,7 +16,7 @@
     )
     (cons
       (car (last list1))
-      (car (last list2))
+      (last list2)
     )
     (cons
       (car (last list1))
