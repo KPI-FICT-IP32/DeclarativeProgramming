@@ -1,0 +1,84 @@
+\documentclass[a4paper, 14pt]{extarticle}
+\usepackage{polyglossia}
+\setdefaultlanguage{ukrainian}
+\setotherlanguage{english}
+\PolyglossiaSetup{ukrainian}{indentfirst=true}
+
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+\usepackage[left=2.5cm, top=2.5cm, right=1.5cm, bottom=1.5cm]{geometry}
+
+\linespread{1.5}
+\setlength{\parindent}{1.25cm}
+
+\usepackage{mathtools}
+
+\usepackage{listings, color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{
+  frame=tb,
+  language=Lisp,
+  aboveskip=3mm,
+  belowskip=3mm,
+  inputencoding=utf8,
+  extendedchars=\true,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=2
+}
+
+
+\begin{document}
+
+\begin{titlepage}
+  \newgeometry{left=2.5cm, top=1.5cm, right=1.5cm, bottom=1.5cm}
+  \thispagestyle{empty}
+  \center
+  \textsc{\uppercase{Міністерство освіти і науки України\\Національний технічний університет України\\<<Київський політехнічний інститут>>}}\\[1cm]
+  \textsc{Кафедра обчислювальної техніки}\\[0.5cm]
+  \vfill
+  \textsc{\Large \textbf{Лабораторна робота #1}}\\
+  \textsc{з дисципліни}\\
+  \textsc{\large ``Декларативне програмування''}\\
+  \textsc{на тему:}\\
+  \textsc{\Large <<Опис та виклик функцій у мові Lisp>>}\\
+  \vspace{3cm}
+  \begin{minipage}{0.4\textwidth}
+    \begin{flushleft} \large
+      \emph{Виконав:}\\
+      студент гр. ІП-32 \\
+      \textsc{Ковальчук О. М.} % Your name
+    \end{flushleft}
+  \end{minipage}
+  \begin{minipage}{0.4\textwidth}
+    \begin{flushright} \large
+      \emph{Перевірив:} \\
+      доцент каф. АСОІУ \\
+      \textsc{Баклан І. В.} % Supervisor's Name
+    \end{flushright}
+  \end{minipage}\\[4cm]
+  \vfill
+
+  Київ 2015
+\end{titlepage}
+\setcounter{page}{2}
+\section{Мета і задачі}
+\textbf{Метою роботи} є вивчення базових функцій організації та обробки списків, а також способів опису і виклику нерекурсивних функцій у мові програмування Lisp
+\textbf{Основні задачі}
+\begin{itemize}
+  \item Отримати навички роботи з інтерпретатором Lisp
+  \item Вивчити роботу базових функцій із розширення набору примітивних функцій
+  \item Ознайомитися з описом функцій у Lisp
+\end{itemize}
+\end{document}
