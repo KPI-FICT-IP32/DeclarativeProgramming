@@ -1,4 +1,4 @@
-\documentclass[a4paper, 10pt]{extarticle}
+\documentclass[a4paper, 12pt]{extarticle}
 \usepackage{polyglossia}
 \setdefaultlanguage{ukrainian}
 \setotherlanguage{english}
@@ -33,9 +33,12 @@
   stringstyle=\color{mauve},
   breaklines=true,
   breakatwhitespace=true,
-  tabsize=2
+  tabsize=2,
+  lineskip={-1.5pt}
 }
 
+\usepackage{hyperref}
+\usepackage{float}
 
 \begin{document}
 
@@ -120,19 +123,25 @@
 
 \section{Результати}
 \subsection{Завдання 1}
-\begin{figure}[h!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.5\textwidth]{screenshots/task-01.png}
 \end{figure}
 \subsection{Завдання 2}
-\begin{figure}[h!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.9\textwidth]{screenshots/task-02.png}
 \end{figure}
 \subsection{Завдання 3}
-\begin{figure}[h!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.5\textwidth]{screenshots/task-03.png}
 \end{figure}
+
+\section{Висновки}
+
+Під час виконання даної лабораторної роботи я познайомився із такою парадигмою, як \textit{функціональне програмування},дізнався про таку мову, як \textit{Lisp} та застосував її для виконання поставлених завдань.
+
+Вихідні коди виконаних завдань та даного звіту є у відкритому доступі та доступні за посиланням: \url{https://github.com/anxolerd/kpi-declarative-programming}
 
 \end{document}
