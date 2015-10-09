@@ -1,5 +1,5 @@
 (defun range (a &optional b) 
-  (flet 
+  (labels 
     ((rng (mm mx)
           (cond 
             ((= mm mx) nil) 
