@@ -1,0 +1,107 @@
+\documentclass[a4paper, 12pt]{extarticle}
+\usepackage{polyglossia}
+\setdefaultlanguage{ukrainian}
+\setotherlanguage{english}
+
+\usepackage{fontspec}
+\setmainfont{CMU Sans Serif}
+\newfontfamily{\cyrillicfonttt}{CMU Typewriter Text}
+
+\usepackage[left=2.5cm, top=2.5cm, right=1.5cm, bottom=1.5cm]{geometry}
+
+\linespread{1.5}
+\setlength{\parindent}{0cm}
+
+\usepackage{listings, color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{
+  frame=tb,
+  language=Lisp,
+  aboveskip=3mm,
+  belowskip=3mm,
+  inputencoding=utf8,
+  extendedchars=\true,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=2,
+  lineskip={-1.5pt}
+}
+
+\usepackage{hyperref}
+\usepackage{float}
+
+\begin{document}
+
+\begin{titlepage}
+  \newgeometry{left=2.5cm, top=1.5cm, right=1.5cm, bottom=1.5cm}
+  \thispagestyle{empty}
+  \center
+  \textsc{\uppercase{Міністерство освіти і науки України\\Національний технічний університет України\\<<Київський політехнічний інститут>>}}\\[1cm]
+  \textsc{Кафедра обчислювальної техніки}\\[0.5cm]
+  \vfill
+  \textsc{\Large \textbf{Лабораторна робота \#2}}\\
+  \textsc{з дисципліни}\\
+  \textsc{\large ``Декларативне програмування''}\\
+  \textsc{на тему:}\\
+  \textsc{\Large <<Опис рекурсивних функцій у мові Lisp>>}\\
+  \vspace{3cm}
+  \begin{minipage}{0.4\textwidth}
+    \begin{flushleft} \large
+      \emph{Виконав:}\\
+      студент гр. ІП-32 \\
+      \textsc{Ковальчук О. М.} % Your name
+    \end{flushleft}
+  \end{minipage}
+  \begin{minipage}{0.4\textwidth}
+    \begin{flushright} \large
+      \emph{Перевірив:} \\
+      доцент каф. АСОІУ \\
+      \textsc{Баклан І. В.} % Supervisor's Name
+    \end{flushright}
+  \end{minipage}\\[4cm]
+  \vfill
+
+  Київ 2015
+\end{titlepage}
+\setcounter{page}{2}
+\section{Мета і задачі}
+\textbf{Метою роботи} є вивчення основних правил опису базових рекурсивних функцій у мові програмування Lisp
+\section{Визначення завдання}
+\subsection{Визначення вихідних даних та індивідуального завдання}
+Номер за списком --- 13. Отже, номер варіанту завдання --- 13.
+
+\subsection{Завдання 1}
+Описати функцію для підрахунку числа елеметів-списків заданого списку на всіх рівнях вкладеності.
+
+\subsection{Завдання 2}
+Реалізувати функцію для сортування списку методом простих вставок.
+
+\subsection{Завдання 3}
+Написати програму для об'єднання двох відсортованих списків
+
+\subsection{Завдання 4}
+Написати програму, яка повертає T, якщо lst2 є підсписком lst1 вкладеності N
+
+\section{Виконання}
+\lstinputlisting[caption=Завдання 1]{count-nested-lists.lsp}
+\lstinputlisting[caption=Завдання 2]{insertion-sort.lsp}
+\lstinputlisting[caption=Завдання 3]{merge.lsp}
+\lstinputlisting[caption=Завдання 4]{list-checker.lsp}
+
+\section{Висновки}
+
+Під час виконання даної лабораторної роботи я навчився створювати найпростіші рекурсивні функції мовою \textit{Lisp} та застосував отримані навички для виконання поставлених завдань.
+
+Вихідні коди виконаних завдань та даного звіту є у відкритому доступі та доступні за посиланням: \url{https://github.com/anxolerd/kpi-declarative-programming}
+
+\end{document}
