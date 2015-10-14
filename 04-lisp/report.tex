@@ -1,0 +1,130 @@
+\documentclass[a4paper, 12pt]{extarticle}
+\usepackage{polyglossia}
+\setdefaultlanguage{ukrainian}
+\setotherlanguage{english}
+
+\usepackage{fontspec}
+\setmainfont{CMU Sans Serif}
+\newfontfamily{\cyrillicfonttt}{CMU Typewriter Text}
+
+\usepackage[left=2.5cm, top=2.5cm, right=1.5cm, bottom=1.5cm]{geometry}
+
+\linespread{1.5}
+\setlength{\parindent}{0cm}
+
+\usepackage{listings, color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  language=Lisp,
+  aboveskip=3mm,
+  belowskip=3mm,
+  inputencoding=utf8,
+  extendedchars=\true,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=2,
+  lineskip={-1.5pt}
+}
+
+\usepackage{hyperref}
+\usepackage{float}
+
+\begin{document}
+
+\begin{titlepage}
+  \newgeometry{left=2.5cm, top=1.5cm, right=1.5cm, bottom=1.5cm}
+  \thispagestyle{empty}\center
+  \textsc{\uppercase{Міністерство освіти і науки України\\Національний технічний університет України\\<<Київський політехнічний інститут>>}}\\[1cm]
+  \textsc{Кафедра обчислювальної техніки}\\[0.5cm]
+  \vfill
+  \textsc{\Large \textbf{Лабораторна робота \#4}}\\
+  \textsc{з дисципліни}\\
+  \textsc{\large ``Декларативне програмування''}\\
+  \textsc{на тему:}\\
+  \textsc{\Large <<Робота з динамічними базами даних>>}\\
+  \vspace{3cm}
+  \begin{minipage}{0.4\textwidth}
+    \begin{flushleft} \large
+      \emph{Виконав:}\\
+      студент гр. ІП-32 \\
+      \textsc{Ковальчук О. М.} % Your name
+    \end{flushleft}
+  \end{minipage}
+  \begin{minipage}{0.4\textwidth}
+    \begin{flushright} \large
+      \emph{Перевірив:} \\
+      доцент каф. АСОІУ \\
+      \textsc{Баклан І. В.} % Supervisor's Name
+    \end{flushright}
+  \end{minipage}\\[4cm]
+  \vfill
+
+  Київ 2015
+\end{titlepage}
+\setcounter{page}{2}
+\section{Мета і задачі}
+\textbf{Метою роботи} є вивчення можливостей Lisp по організації динамічних баз даних.
+\section{Визначення завдання}
+\subsection{Визначення вихідних даних та індивідуального завдання}
+Номер за списком --- 13. Отже, номер варіанту завдання --- 13.
+
+\subsection{Завдання 1}
+Написати програму, яка забезпечує створення бази даних та роботу із нею.
+Об'єкти для збереження в БД: \url{http://www.kometa53.ru/upload/file/trans\%2001_11_2011.pdf}
+
+Програма повинна надавати такі можливості:
+\begin{itemize}
+  \item створення БД;
+  \item додавання інформації у БД;
+  \item редагування інформації;
+  \item запис БД на диск;
+  \item вивантаження БД в оперативну пам'ять;
+  \item перегляд інформації;
+  \item видалення інформації з БД;
+  \item пошук інформації в БД;
+  \item сортування інформації;
+\end{itemize}
+
+\section{Виконання}
+\lstinputlisting[caption=Завдання 1]{db-transformators.lsp}
+\begin{lstlisting}
+; insert
+(db-insert (make-item "ТПК-25" 66 56 46 58 40 "4 отв, диаметр 3.2" 25 0.6 "А33"))
+(db-insert (make-item "ТПК-40" 72 61 50 50 50 "4 отв, диаметр 4.5" 40 0.7 "В43"))
+
+; select
+(db-select-all) ; all
+(db-select-one "ТПК-25") ; by type
+
+; delete
+(db-delete "ТПК-25") ; by type
+
+; update
+(db-update (make-item "ТПК-25" 98 57 36 68 30 "2 отв, диаметр 3.2" 25 0.6 "А33"))
+
+; sorting
+(db-sort ':type) ; by type
+(db-sort ':l-mm) ; by l-mm
+
+; I/O
+(db-save "my-db.txt") ; write to disk
+(db-load "my-db.txt") ; read from disk
+\end{lstlisting}
+
+\section{Висновки}
+
+Під час виконання даної лабораторної роботи я навчився створювати найпростіші динамічні "Бази даних", здійснювати читання та запис у файл мовою \textit{Lisp} та застосував отримані навички для виконання поставлених завдань.
+
+Вихідні коди виконаних завдань та даного звіту є у відкритому доступі та доступні за посиланням: \url{https://github.com/anxolerd/kpi-declarative-programming}
+
+\end{document}
