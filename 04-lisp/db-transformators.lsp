@@ -36,6 +36,10 @@
   (db-delete (getf item :type))
   (db-insert item))
 
+(defun db-sort (key)
+  (sort *db* #'string-lessp :key(lambda (item) (write-to-string (getf item key))))  
+)
+
 (defun db-save (filename)
   (with-open-file (out filename
                        :direction :output
