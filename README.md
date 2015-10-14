@@ -3,7 +3,6 @@
 This repository consists of hometasks for **DECLARATIVE PROGRAMMING** course I study at university
 
 ## Contents
-[TBA]
 ### LISP
 First 4 assignments had to be done using `LISP` programming language
 - `01-lisp/` *Lisp basics*
@@ -11,5 +10,5 @@ First 4 assignments had to be done using `LISP` programming language
 - `03-lisp/` *Local definitions and functionals*
 - `04-lisp/` *Working with files*
 
-### F#
+### F\#
 [TBA]
