@@ -5,10 +5,10 @@
     ((sum? exp) (make-sum (deriv (a1 exp) var)
                           (deriv (a2 exp) var)))
     ((product? exp) (make-sum
-                     (make-product (m1 exp)
-                                   (deriv (m2 exp) var))
-                     (make-product (deriv (m1 exp) var)
-                                   (m2 exp))))))
+                      (make-product (m1 exp)
+                                    (deriv (m2 exp) var))
+                      (make-product (deriv (m1 exp) var)
+                                    (m2 exp))))))
 
 (defun constant? (exp var)
   (and (atom exp)
