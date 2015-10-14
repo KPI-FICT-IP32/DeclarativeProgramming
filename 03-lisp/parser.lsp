@@ -2,16 +2,18 @@
   (reduce 
     (lambda (x y) 
       (concatenate 'string x y))
-      (map 'list #'string args)))
+    (map 'list #'string args)))
 
-(defun parse (src) 
-    (let ((head (car src)) (tail (cdr src))) 
+(defun interpret (src) 
+  (cond 
+    ((atom src) src)
+    (t (let (
+             (head (car src)) 
+             (tail (cdr src)))
          (cond
-           ((eq head 'quote) (list  src))
-           (t (cond
-                ((null src) nil)
-                ((numberp head) (cons head (parse tail)))
-                ((listp head)  (cons (parse head) (parse tail)))
-                ((fboundp head) (funcall head (parse tail)))
-                (t (parse tail)))))))
+           ((eq head 'quote) (car tail))
+           ((numberp head) (cons head (interpret tail)))
+           ((listp head) (cons (interpret head) (interpret tail)))
+           ((fboundp head) (apply head (interpret tail)))
+           (t (interpret tail)))))))
 
