@@ -10,5 +10,7 @@ First 4 assignments had to be done using `LISP` programming language
 - `03-lisp/` *Local definitions and functionals*
 - `04-lisp/` *Working with files*
 
-### F\#
+### F# language
 [TBA]
+
+### Clojure
